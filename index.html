@@ -189,16 +189,20 @@
            ========================================= */
         .ciencia-section { padding: 100px 0; background-color: var(--cor-fundo-claro); }
         .ciencia-container { display: flex; align-items: center; gap: 60px; }
-        .ciencia-imagem { flex: 1; text-align: center; }
+        .ciencia-imagem { 
+            flex: 0 0 350px; /* A MÁGICA: Trava a caixa da imagem em exatamente 350px */
+            text-align: center; 
+        }
+        
         .ciencia-imagem img { 
-            width: 80%; 
-            max-width: 400px;
+            width: 100%; 
+            max-width: 300px;
             display: inline-block; 
             filter: drop-shadow(0 20px 40px rgba(11, 25, 44, 0.25)); 
         }
+        
         .ciencia-texto { 
-            flex: 1.5; /* Dá 50% mais de largura para o texto respirar */
-            padding-left: 20px; /* Afasta o texto do frasco */
+            flex: 1; /* Diz para o texto: "Pegue absolutamente todo o espaço que sobrou!" */
         }
         
         .ciencia-texto h2 { 
@@ -210,10 +214,10 @@
         }
         
         .ciencia-texto p { 
-            font-size: 1.15rem; /* Letra levemente maior */
+            font-size: 1.15rem; 
             color: var(--cor-texto-escuro); 
             margin-bottom: 20px; 
-            line-height: 1.8; /* Aumenta o espaço entre as linhas para leitura premium */
+            line-height: 1.8; 
         }
 
         /* =========================================
