@@ -26,6 +26,27 @@
             --fonte-textos: 'Montserrat', sans-serif;
             
             --transicao-suave: all 0.3s ease;
+
+            /* =========================================
+           RESET GLOBAL (MATA AS BEIRADAS BRANCAS)
+           ========================================= */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden; /* Evita que o site balance para os lados no celular */
+            font-family: var(--fonte-textos);
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo-claro);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
         }
 
         /* Adicione estas classes novas logo abaixo do :root para os preços em 10x */
