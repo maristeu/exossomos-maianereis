@@ -14,11 +14,11 @@
            DESIGN SYSTEM: AZUL NAVY & CHAMPAGNE
            ========================================= */
         :root {
-            --cor-primaria: #0B192C; /* Azul Navy Profundo */
-            --cor-primaria-escura: #060D1A; /* Fundo super escuro para contraste */
-            --cor-secundaria: #E5C07B; /* Dourado Champagne Elegante */
-            --cor-secundaria-hover: #D1A85C; /* Champagne mais escuro no clique */
-            --cor-fundo-claro: #F5F7FA; /* Off-White/Gelo Suave */
+            --cor-primaria: #0B192C;
+            --cor-primaria-escura: #060D1A;
+            --cor-secundaria: #E5C07B;
+            --cor-secundaria-hover: #D1A85C;
+            --cor-fundo-claro: #F5F7FA;
             --cor-texto-escuro: #1A202C;
             --cor-texto-claro: #FFFFFF;
             
@@ -40,7 +40,6 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Botão Principal */
         .btn-champagne {
             display: inline-block;
             background-color: var(--cor-secundaria);
@@ -66,12 +65,11 @@
         }
 
         /* =========================================
-           SEÇÃO 1: HERO (O EVENTO)
+           SEÇÃO 1: HERO
            ========================================= */
         .hero {
             position: relative;
             background-color: var(--cor-primaria);
-            /* A imagem de fundo (frasco ou conceito) vai aqui */
             background-image: linear-gradient(rgba(11, 25, 44, 0.9), rgba(11, 25, 44, 0.95)), url('exoday-bg-hero.webp');
             background-size: cover;
             background-position: center;
@@ -97,44 +95,12 @@
             margin-bottom: 24px;
         }
 
-        .hero h1 {
-            font-family: var(--fonte-titulos);
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
+        .hero h1 { font-family: var(--fonte-titulos); font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--cor-secundaria); font-style: italic; }
+        .hero p { font-size: 1.25rem; font-weight: 300; margin-bottom: 40px; color: rgba(255, 255, 255, 0.85); max-width: 750px; margin-left: auto; margin-right: auto; }
 
-        .hero h1 span {
-            color: var(--cor-secundaria);
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .escassez-box {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--cor-secundaria);
-        }
-
-        .escassez-box span {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 20px;
-            border-radius: 4px;
-            border: 1px solid rgba(229, 192, 123, 0.2);
-        }
+        .escassez-box { display: flex; justify-content: center; gap: 20px; margin-top: 40px; font-size: 0.95rem; font-weight: 500; color: var(--cor-secundaria); }
+        .escassez-box span { background: rgba(255, 255, 255, 0.05); padding: 10px 20px; border-radius: 4px; border: 1px solid rgba(229, 192, 123, 0.2); }
 
         @media (max-width: 768px) {
             .hero { padding: 80px 0; min-height: auto; }
@@ -142,114 +108,75 @@
             .hero p { font-size: 1.05rem; }
             .escassez-box { flex-direction: column; gap: 10px; }
         }
-    /* =========================================
+
+        /* =========================================
            SEÇÃO 2: A CIÊNCIA (FRASCO)
            ========================================= */
-        .ciencia-section {
-            padding: 100px 0;
-            background-color: var(--cor-fundo-claro);
-        }
-        
-        .ciencia-container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-        
-        .ciencia-imagem {
-            flex: 1;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(11, 25, 44, 0.15); /* Sombra em Azul Navy */
-        }
-        
-        .ciencia-imagem img {
-            width: 100%;
-            display: block;
-        }
-        
-        .ciencia-texto {
-            flex: 1;
-        }
-        
-        .ciencia-texto h2 {
-            font-family: var(--fonte-titulos);
-            font-size: 2.6rem;
-            color: var(--cor-primaria);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .ciencia-texto p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        
+        .ciencia-section { padding: 100px 0; background-color: var(--cor-fundo-claro); }
+        .ciencia-container { display: flex; align-items: center; gap: 60px; }
+        .ciencia-imagem { flex: 1; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(11, 25, 44, 0.15); }
+        .ciencia-imagem img { width: 100%; display: block; }
+        .ciencia-texto { flex: 1; }
+        .ciencia-texto h2 { font-family: var(--fonte-titulos); font-size: 2.6rem; color: var(--cor-primaria); margin-bottom: 20px; line-height: 1.2; }
+        .ciencia-texto p { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+
         /* =========================================
            SEÇÃO 3: AUTORIDADE (MAIANE REIS)
            ========================================= */
-        .autoridade-section {
-            padding: 100px 0;
-            background-color: var(--cor-primaria-escura);
-            color: var(--cor-texto-claro);
-        }
-        
-        .autoridade-container {
-            display: flex;
-            align-items: center;
-            flex-direction: row-reverse; /* Inverte a posição: Foto na direita, texto na esquerda */
-            gap: 60px;
-        }
-        
-        .autoridade-imagem {
-            flex: 1;
-            position: relative;
-        }
-        
-        .autoridade-imagem img {
-            width: 100%;
-            border-radius: 8px;
-            border: 2px solid var(--cor-secundaria);
-            box-shadow: -15px 15px 0px rgba(229, 192, 123, 0.2); /* Sombra sólida Champagne */
-        }
-        
-        .autoridade-texto {
-            flex: 1;
-        }
-        
-        .autoridade-texto h2 {
-            font-family: var(--fonte-titulos);
-            font-size: 2.6rem;
-            color: var(--cor-secundaria);
-            margin-bottom: 20px;
-        }
-        
-        .autoridade-texto p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 20px;
-        }
-        
-        .autoridade-assinatura {
-            font-family: var(--fonte-titulos);
-            font-size: 2rem;
-            font-style: italic;
-            color: var(--cor-secundaria);
-            margin-top: 30px;
-        }
-        
-        /* Responsividade Celular */
+        .autoridade-section { padding: 100px 0; background-color: var(--cor-primaria-escura); color: var(--cor-texto-claro); }
+        .autoridade-container { display: flex; align-items: center; flex-direction: row-reverse; gap: 60px; }
+        .autoridade-imagem { flex: 1; position: relative; }
+        .autoridade-imagem img { width: 100%; border-radius: 8px; border: 2px solid var(--cor-secundaria); box-shadow: -15px 15px 0px rgba(229, 192, 123, 0.2); }
+        .autoridade-texto { flex: 1; }
+        .autoridade-texto h2 { font-family: var(--fonte-titulos); font-size: 2.6rem; color: var(--cor-secundaria); margin-bottom: 20px; }
+        .autoridade-texto p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+        .autoridade-assinatura { font-family: var(--fonte-titulos); font-size: 2rem; font-style: italic; color: var(--cor-secundaria); margin-top: 30px; }
+
         @media (max-width: 768px) {
-            .ciencia-container, .autoridade-container { 
-                flex-direction: column; 
-                text-align: center; 
-                gap: 40px; 
-            }
+            .ciencia-container, .autoridade-container { flex-direction: column; text-align: center; gap: 40px; }
             .ciencia-section, .autoridade-section { padding: 70px 0; }
             .autoridade-imagem img { box-shadow: 0px 15px 0px rgba(229, 192, 123, 0.2); }
         }
-    
+
+        /* =========================================
+           SEÇÃO 4: GALERIA DE RESULTADOS
+           ========================================= */
+        .galeria-section { padding: 100px 0; background-color: var(--cor-fundo-claro); text-align: center; }
+        .galeria-titulo { font-family: var(--fonte-titulos); font-size: 2.8rem; color: var(--cor-primaria); margin-bottom: 15px; }
+        .galeria-subtitulo { font-size: 1.1rem; color: #555; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .galeria-item { border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid rgba(229, 192, 123, 0.3); transition: var(--transicao-suave); background: #fff; }
+        .galeria-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(11, 25, 44, 0.1); }
+        .galeria-item img { width: 100%; display: block; }
+        .galeria-legenda { background: var(--cor-primaria-escura); color: var(--cor-secundaria); padding: 15px; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* =========================================
+           SEÇÃO 5: TABELA DE OFERTAS
+           ========================================= */
+        .ofertas-section { padding: 100px 0; background-color: var(--cor-primaria); text-align: center; color: var(--cor-texto-claro); border-top: 2px solid var(--cor-secundaria); }
+        .ofertas-titulo { font-family: var(--fonte-titulos); font-size: 2.8rem; color: var(--cor-secundaria); margin-bottom: 15px; }
+        .ofertas-subtitulo { font-size: 1.15rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .ofertas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+        .oferta-card { background: var(--cor-primaria-escura); border: 2px solid rgba(229, 192, 123, 0.2); border-radius: 12px; padding: 40px 25px; position: relative; transition: var(--transicao-suave); display: flex; flex-direction: column; justify-content: space-between; }
+        .oferta-card:hover { transform: translateY(-10px); border-color: var(--cor-secundaria); box-shadow: 0 15px 40px rgba(229, 192, 123, 0.15); }
+        .oferta-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--cor-secundaria); color: var(--cor-primaria-escura); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+        .oferta-nome { font-family: var(--fonte-titulos); font-size: 1.6rem; color: var(--cor-texto-claro); margin-bottom: 10px; }
+        .oferta-sessoes { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+        .oferta-ancoragem { font-size: 1.1rem; color: rgba(255, 255, 255, 0.4); text-decoration: line-through; margin-bottom: 5px; }
+        .oferta-preco { font-family: var(--fonte-titulos); font-size: 2.8rem; color: var(--cor-secundaria); font-weight: 700; margin-bottom: 20px; line-height: 1; }
+        .oferta-moeda { font-size: 1.2rem; vertical-align: super; }
+        .oferta-btn { background-color: transparent; color: var(--cor-secundaria); padding: 15px; border-radius: 6px; text-decoration: none; font-weight: 600; text-transform: uppercase; transition: var(--transicao-suave); border: 1px solid var(--cor-secundaria); }
+        .oferta-btn:hover { background-color: var(--cor-secundaria); color: var(--cor-primaria-escura); }
+        .oferta-destaque { border-color: var(--cor-secundaria); transform: scale(1.05); background: linear-gradient(145deg, var(--cor-primaria-escura), #0a1324); }
+        .oferta-destaque:hover { transform: scale(1.05) translateY(-10px); }
+        .oferta-destaque .oferta-btn { background-color: var(--cor-secundaria); color: var(--cor-primaria-escura); }
+        .oferta-destaque .oferta-btn:hover { background-color: var(--cor-fundo-claro); border-color: var(--cor-fundo-claro); }
+
+        @media (max-width: 900px) {
+            .oferta-destaque { transform: scale(1); }
+            .oferta-destaque:hover { transform: translateY(-5px); }
+            .galeria-titulo, .ofertas-titulo { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -257,16 +184,97 @@
     <section class="hero">
         <div class="container">
             <div class="hero-tag">Evento Exclusivo: Avaliação Gratuita</div>
-            
             <h1>O Dia da sua <span>Transformação Capilar.</span></h1>
-            
             <p>Acesse o ápice da medicina regenerativa em uma condição que não vai se repetir. O Exoday é a sua única chance de reservar o protocolo Exobrows com até 60% de subsídio e bônus premium inclusos.</p>
-            
             <button id="btn-abrir-vaga" class="btn-champagne">Quero Aplicar para uma Vaga</button>
-            
             <div class="escassez-box">
                 <span>⚠️ Vagas Limitadas a 1 Único Dia</span>
                 <span>📅 Condições Estritas de Lançamento</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="ciencia-section">
+        <div class="container ciencia-container">
+            <div class="ciencia-imagem">
+                <img src="frasco-asce.webp" alt="Frasco ASCE+ HRLV Original">
+            </div>
+            <div class="ciencia-texto">
+                <h2>O Segredo dos Resultados: Pureza e Alta Concentração</h2>
+                <p>O mercado está cheio de promessas superficiais e tônicos que não entregam volume real. No <strong>Exoday</strong>, nós garantimos a utilização exclusiva do frasco original <strong>ASCE+ HRLV</strong> sem diluições.</p>
+                <p>Nossa tecnologia não disfarça a queda, ela age na matriz do problema. Através de bilhões de nanovesículas inteligentes, enviamos um comando direto para reativar as células-tronco dos seus folículos adormecidos.</p>
+                <p>Sem cortes, sem tempo de inatividade e com máxima eficácia. É a medicina regenerativa em seu estado da arte, devolvendo a densidade e o preenchimento que você sempre desejou.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="autoridade-section">
+        <div class="container autoridade-container">
+            <div class="autoridade-imagem">
+                <img src="maiane-reis.webp" alt="Maiane Reis - Especialista Exobrows">
+            </div>
+            <div class="autoridade-texto">
+                <h2>A Especialista por Trás do Protocolo Exobrows</h2>
+                <p>Com domínio profundo em estética avançada e regeneração capilar, <strong>Maiane Reis</strong> desenvolveu um método rigoroso que descarta soluções paliativas. Seu foco clínico é a saúde celular autêntica e a entrega de resultados tangíveis.</p>
+                <p>Defensora de tratamentos que respeitam a fisiologia e o conforto do paciente, ela utiliza o mais moderno sistema de <em>drug delivery</em> para garantir que a carga máxima de exossomos penetre diretamente na derme, estimulando o crescimento vigoroso dos fios.</p>
+                <p>Para ela, muito mais do que tratar falhas na barba, sobrancelha ou couro cabeludo, o verdadeiro objetivo do seu trabalho é restaurar a confiança e o poder de imagem de cada pessoa que senta em sua cadeira.</p>
+                <div class="autoridade-assinatura">Maiane Reis</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeria-section">
+        <div class="container">
+            <h2 class="galeria-titulo">A Prova Silenciosa da Eficácia</h2>
+            <p class="galeria-subtitulo">Resultados clínicos documentados. A densidade que vê é fruto da mais alta biotecnologia aplicada à regeneração celular.</p>
+            <div class="galeria-grid">
+                <div class="galeria-item"><img src="exoday-cabelo-1.webp" alt="Densidade Capilar"><div class="galeria-legenda">Densidade Capilar</div></div>
+                <div class="galeria-item"><img src="exoday-cabelo-2.webp" alt="Preenchimento Frontal"><div class="galeria-legenda">Preenchimento Frontal</div></div>
+                <div class="galeria-item"><img src="exoday-cabelo-3.webp" alt="Aceleração Folicular"><div class="galeria-legenda">Aceleração Folicular</div></div>
+                <div class="galeria-item"><img src="exoday-barba-1.webp" alt="Correção em Barba"><div class="galeria-legenda">Correção de Falhas</div></div>
+                <div class="galeria-item"><img src="exoday-barba-2.webp" alt="Volume Maxilar"><div class="galeria-legenda">Volume de Maxilar</div></div>
+                <div class="galeria-item"><img src="exoday-barba-3.webp" alt="Densidade de Barba"><div class="galeria-legenda">Densidade Uniforme</div></div>
+                <div class="galeria-item"><img src="exoday-sobrancelha-1.webp" alt="Sobrancelhas"><div class="galeria-legenda">Reconstrução Fio a Fio</div></div>
+                <div class="galeria-item"><img src="exoday-sobrancelha-2.webp" alt="Design e Volume"><div class="galeria-legenda">Design e Volume</div></div>
+                <div class="galeria-item"><img src="exoday-sobrancelha-3.webp" alt="Preenchimento"><div class="galeria-legenda">Preenchimento Natural</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ofertas-section">
+        <div class="container">
+            <h2 class="ofertas-titulo">Condições Exclusivas: Exoday</h2>
+            <p class="ofertas-subtitulo">Desbloqueámos um subsídio especial estritamente para os agendamentos realizados hoje. Inclui os Bónus de Tricoscopia 3D, Fotobiomodulação (LED) e Retorno Clínico.</p>
+            <div class="ofertas-grid">
+                <div class="oferta-card">
+                    <h3 class="oferta-nome">Sobrancelhas</h3>
+                    <div class="oferta-sessoes">Protocolo 4 Sessões</div>
+                    <div class="oferta-ancoragem">De R$ 3.988,00 por</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>1.580</div>
+                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                </div>
+                <div class="oferta-card">
+                    <h3 class="oferta-nome">Barba</h3>
+                    <div class="oferta-sessoes">Protocolo 4 Sessões</div>
+                    <div class="oferta-ancoragem">De R$ 4.788,00 por</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>2.500</div>
+                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                </div>
+                <div class="oferta-card oferta-destaque">
+                    <div class="oferta-tag">Mais Procurado</div>
+                    <h3 class="oferta-nome">Capilar (Cabeça Toda)</h3>
+                    <div class="oferta-sessoes">Protocolo 4 Sessões</div>
+                    <div class="oferta-ancoragem">De R$ 7.988,00 por</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>5.800</div>
+                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                </div>
+                <div class="oferta-card">
+                    <h3 class="oferta-nome">Capilar (1 Região)</h3>
+                    <div class="oferta-sessoes">Protocolo 4 Sessões</div>
+                    <div class="oferta-ancoragem">De R$ 5.200,00 por</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>3.200</div>
+                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                </div>
             </div>
         </div>
     </section>
