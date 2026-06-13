@@ -10,16 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
    <style>
-        /* =========================================
-           DESIGN SYSTEM: AZUL NAVY & CHAMPAGNE
+       /* =========================================
+           DESIGN SYSTEM: BEGE SUAVE, PRETO & DOURADO
            ========================================= */
         :root {
-            --cor-primaria: #0B192C;
-            --cor-primaria-escura: #060D1A;
-            --cor-secundaria: #E5C07B;
-            --cor-secundaria-hover: #D1A85C;
-            --cor-fundo-claro: #F5F7FA;
-            --cor-texto-escuro: #1A202C;
+            --cor-primaria: #111111; /* Preto Absoluto / Luxo */
+            --cor-primaria-escura: #000000; /* Fundo super escuro */
+            --cor-secundaria: #C59B5F; /* Dourado/Caramelo elegante da arte */
+            --cor-secundaria-hover: #A8814B; 
+            --cor-fundo-claro: #FDFBF7; /* Bege Suave da imagem dela */
+            --cor-texto-escuro: #2C2825;
             --cor-texto-claro: #FFFFFF;
             
             --fonte-titulos: 'Playfair Display', serif;
@@ -28,7 +28,20 @@
             --transicao-suave: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Adicione estas classes novas logo abaixo do :root para os preços em 10x */
+        .oferta-preco-parcelado {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: -5px;
+        }
+        .oferta-vista {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
 
         body {
             font-family: var(--fonte-textos);
@@ -351,13 +364,13 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-tag">Evento Exclusivo: Avaliação Gratuita</div>
-            <h1>O Dia da sua <span>Transformação Capilar.</span></h1>
-            <p>Acesse o ápice da medicina regenerativa em uma condição que não vai se repetir. O Exoday é a sua única chance de reservar o protocolo Exobrows com até 60% de subsídio e bônus premium inclusos.</p>
-            <button id="btn-abrir-vaga" class="btn-champagne">Quero Aplicar para uma Vaga</button>
+            <div class="hero-tag">Acesso Exclusivo Liberado</div>
+            <h1>O Poder da <span>Regeneração Celular.</span></h1>
+            <p>Você foi selecionada para ter acesso às condições especiais do nosso protocolo de Exossomos. Conheça a tecnologia que está revolucionando a recuperação dos fios e resgate o seu tratamento com as mesmas vantagens do nosso evento presencial.</p>
+            <button id="btn-abrir-vaga" class="btn-champagne">Quero Resgatar Meu Desconto</button>
             <div class="escassez-box">
-                <span>⚠️ Vagas Limitadas a 1 Único Dia</span>
-                <span>📅 Condições Estritas de Lançamento</span>
+                <span>⚠️ Condição de Repescagem Limitada</span>
+                <span>📅 Bônus Especiais Inclusos</span>
             </div>
         </div>
     </section>
@@ -410,38 +423,51 @@
 
     <section class="ofertas-section">
         <div class="container">
-            <h2 class="ofertas-titulo">Condições Exclusivas: Exoday</h2>
-            <p class="ofertas-subtitulo">Desbloqueámos um subsídio especial estritamente para os agendamentos realizados hoje. Inclui os Bónus de Tricoscopia 3D, Fotobiomodulação (LED) e Retorno Clínico.</p>
+            <h2 class="ofertas-titulo">Condições Especiais Liberadas</h2>
+            <p class="ofertas-subtitulo">Disponibilizamos este link exclusivo para que você possa garantir os valores subsidiados, mesmo não tendo comparecido presencialmente. Inclui os Bônus de Tricoscopia 3D, Fotobiomodulação (LED) e Retorno.</p>
             <div class="ofertas-grid">
+                
                 <div class="oferta-card">
                     <h3 class="oferta-nome">Sobrancelhas</h3>
                     <div class="oferta-sessoes">Protocolo 4 Sessões</div>
                     <div class="oferta-ancoragem">De R$ 3.988,00 por</div>
-                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>1.580</div>
-                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                    <div class="oferta-preco-parcelado">10x de</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>158<span class="oferta-moeda">,00</span></div>
+                    <div class="oferta-vista">ou R$ 1.580 à vista</div>
+                    <button class="oferta-btn btn-abrir-modal">Resgatar Desconto</button>
                 </div>
+                
                 <div class="oferta-card">
                     <h3 class="oferta-nome">Barba</h3>
                     <div class="oferta-sessoes">Protocolo 4 Sessões</div>
                     <div class="oferta-ancoragem">De R$ 4.788,00 por</div>
-                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>2.500</div>
-                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                    <div class="oferta-preco-parcelado">10x de</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>250<span class="oferta-moeda">,00</span></div>
+                    <div class="oferta-vista">ou R$ 2.500 à vista</div>
+                    <button class="oferta-btn btn-abrir-modal">Resgatar Desconto</button>
                 </div>
+                
                 <div class="oferta-card oferta-destaque">
                     <div class="oferta-tag">Mais Procurado</div>
                     <h3 class="oferta-nome">Capilar (Cabeça Toda)</h3>
                     <div class="oferta-sessoes">Protocolo 4 Sessões</div>
                     <div class="oferta-ancoragem">De R$ 7.988,00 por</div>
-                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>5.800</div>
-                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                    <div class="oferta-preco-parcelado">10x de</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>580<span class="oferta-moeda">,00</span></div>
+                    <div class="oferta-vista">ou R$ 5.800 à vista</div>
+                    <button class="oferta-btn btn-abrir-modal">Resgatar Desconto</button>
                 </div>
+                
                 <div class="oferta-card">
                     <h3 class="oferta-nome">Capilar (1 Região)</h3>
                     <div class="oferta-sessoes">Protocolo 4 Sessões</div>
                     <div class="oferta-ancoragem">De R$ 5.200,00 por</div>
-                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>3.200</div>
-                    <button class="oferta-btn btn-abrir-modal">Aplicar para Vaga</button>
+                    <div class="oferta-preco-parcelado">10x de</div>
+                    <div class="oferta-preco"><span class="oferta-moeda">R$</span>320<span class="oferta-moeda">,00</span></div>
+                    <div class="oferta-vista">ou R$ 3.200 à vista</div>
+                    <button class="oferta-btn btn-abrir-modal">Resgatar Desconto</button>
                 </div>
+                
             </div>
         </div>
     </section>
