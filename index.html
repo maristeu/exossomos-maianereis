@@ -182,6 +182,51 @@
             .oferta-destaque:hover { transform: translateY(-5px); }
             .galeria-titulo, .ofertas-titulo { font-size: 2.2rem; }
         }
+    /* =========================================
+           MODAL DE APLICAÇÃO (FORMULÁRIO CAPCIOSO)
+           ========================================= */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(6, 13, 26, 0.9); backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; visibility: hidden; transition: var(--transicao-suave);
+        }
+
+        .modal-overlay.ativo { opacity: 1; visibility: visible; }
+
+        .modal-box {
+            background: var(--cor-fundo-claro); width: 100%; max-width: 500px;
+            border-radius: 12px; padding: 40px; position: relative;
+            transform: translateY(20px); transition: all 0.4s ease;
+            border: 2px solid var(--cor-secundaria);
+        }
+
+        .modal-overlay.ativo .modal-box { transform: translateY(0); }
+
+        .fechar-modal {
+            position: absolute; top: 15px; right: 20px; font-size: 1.8rem;
+            color: var(--cor-primaria); cursor: pointer; font-weight: bold;
+        }
+
+        .etapa-quiz { display: none; text-align: center; }
+        .etapa-quiz.ativa { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .quiz-pergunta { font-family: var(--fonte-titulos); font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 25px; }
+
+        .opcao-btn {
+            display: block; width: 100%; background: #fff; border: 1px solid rgba(229, 192, 123, 0.5);
+            padding: 15px; margin-bottom: 15px; border-radius: 8px; cursor: pointer;
+            font-family: var(--fonte-textos); font-weight: 600; color: var(--cor-primaria);
+            transition: var(--transicao-suave); font-size: 1rem;
+        }
+
+        .opcao-btn:hover { background: var(--cor-primaria); color: var(--cor-secundaria); border-color: var(--cor-primaria); }
+
+        .input-quiz {
+            width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ccc;
+            border-radius: 8px; font-family: var(--fonte-textos); font-size: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -284,5 +329,86 @@
         </div>
     </section>
 
+<div class="modal-overlay" id="modal-aplicacao">
+        <div class="modal-box">
+            <span class="fechar-modal" id="btn-fechar">&times;</span>
+            
+            <div class="etapa-quiz ativa" id="etapa-1">
+                <h3 class="quiz-pergunta">Qual área você deseja restaurar?</h3>
+                <button class="opcao-btn" onclick="proximaEtapa(1, 'Cabelo')">Couro Cabeludo (Calvície/Falhas)</button>
+                <button class="opcao-btn" onclick="proximaEtapa(1, 'Barba')">Barba (Volume e Correção)</button>
+                <button class="opcao-btn" onclick="proximaEtapa(1, 'Sobrancelha')">Sobrancelhas (Design e Preenchimento)</button>
+            </div>
+
+            <div class="etapa-quiz" id="etapa-2">
+                <h3 class="quiz-pergunta">O Exoday possui vagas extremamente limitadas. Qual o seu melhor turno?</h3>
+                <button class="opcao-btn" onclick="proximaEtapa(2, 'Manhã')">Período da Manhã</button>
+                <button class="opcao-btn" onclick="proximaEtapa(2, 'Tarde')">Período da Tarde</button>
+                <button class="opcao-btn" onclick="proximaEtapa(2, 'Integral')">Tenho flexibilidade de horário</button>
+            </div>
+
+            <div class="etapa-quiz" id="etapa-3">
+                <h3 class="quiz-pergunta">Último Passo: Confirmação</h3>
+                <p style="margin-bottom: 20px; color: #555;">Para enviarmos os valores especiais e verificarmos a disponibilidade da sua vaga, informe seus dados:</p>
+                <input type="text" id="nome-lead" class="input-quiz" placeholder="Seu Nome Completo" required>
+                <input type="tel" id="whatsapp-lead" class="input-quiz" placeholder="Seu WhatsApp (com DDD)" required>
+                <button class="btn-champagne" style="width: 100%; border: none;" onclick="finalizarAplicacao()">Enviar Aplicação via WhatsApp</button>
+            </div>
+
+        </div>
+    </div>
+<script>
+        const modal = document.getElementById('modal-aplicacao');
+        const btnFechar = document.getElementById('btn-fechar');
+        const botoesAbrir = document.querySelectorAll('.btn-abrir-modal, #btn-abrir-vaga');
+        
+        let respostas = { area: '', turno: '' };
+
+        // Abrir Modal
+        botoesAbrir.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('ativo');
+                // Reseta o quiz sempre que abrir
+                document.getElementById('etapa-1').classList.add('ativa');
+                document.getElementById('etapa-2').classList.remove('ativa');
+                document.getElementById('etapa-3').classList.remove('ativa');
+            });
+        });
+
+        // Fechar Modal
+        btnFechar.addEventListener('click', () => modal.classList.remove('ativo'));
+        modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('ativo'); });
+
+        // Avançar Etapas
+        function proximaEtapa(etapaAtual, resposta) {
+            if (etapaAtual === 1) respostas.area = resposta;
+            if (etapaAtual === 2) respostas.turno = resposta;
+
+            document.getElementById(`etapa-${etapaAtual}`).classList.remove('ativa');
+            document.getElementById(`etapa-${etapaAtual + 1}`).classList.add('ativa');
+        }
+
+        // Finalizar e Enviar para o WhatsApp
+        function finalizarAplicacao() {
+            const nome = document.getElementById('nome-lead').value;
+            const zap = document.getElementById('whatsapp-lead').value;
+
+            if(!nome || !zap) {
+                alert("Por favor, preencha seu nome e WhatsApp para garantir a vaga.");
+                return;
+            }
+
+            // O número da Maiane que você me passou formatado
+            const numeroMaiane = "5585981268094"; 
+            
+            const textoMensagem = `Olá, Maiane! Vim pelo site do Exoday.%0A%0AGostaria de garantir minha vaga e confirmar os bônus.%0A%0A*Meus dados de aplicação:*%0A👤 Nome: ${nome}%0A🎯 Área de Interesse: ${respostas.area}%0A⏰ Melhor Turno: ${respostas.turno}%0A%0AAinda há vagas disponíveis para o meu perfil?`;
+
+            const linkWhatsapp = `https://wa.me/${numeroMaiane}?text=${textoMensagem}`;
+            
+            window.open(linkWhatsapp, '_blank');
+            modal.classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>
