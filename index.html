@@ -14,20 +14,21 @@
            DESIGN SYSTEM: TERRACOTA, MARROM CAFÉ & BEGE SUAVE
            ========================================= */
         :root {
-            --cor-primaria: #946041; /* O Terracota exato do fundo da arte dela */
-            --cor-primaria-escura: #543422; /* Marrom Café profundo (para rodapé e contrastes) */
-            --cor-secundaria: #D4A373; /* Areia/Caramelo (Para botões e letras em destaque) */
-            --cor-secundaria-hover: #C28E5A; /* Tom um pouco mais escuro para o clique do botão */
-            --cor-fundo-claro: #FAF6F0; /* O Bege Suave do fundo do cartão da imagem */
-            --cor-texto-escuro: #4A3320; /* Substitui o preto por um Marrom super escuro nos textos */
+            --cor-primaria: #946041;
+            --cor-primaria-escura: #543422;
+            --cor-secundaria: #D4A373;
+            --cor-secundaria-hover: #C28E5A;
+            --cor-fundo-claro: #FAF6F0;
+            --cor-texto-escuro: #4A3320;
             --cor-texto-claro: #FFFFFF;
             
             --fonte-titulos: 'Playfair Display', serif;
             --fonte-textos: 'Montserrat', sans-serif;
             
             --transicao-suave: all 0.3s ease;
+        }
 
-            /* =========================================
+        /* =========================================
            RESET GLOBAL (MATA AS BEIRADAS BRANCAS)
            ========================================= */
         * { 
@@ -40,13 +41,12 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            overflow-x: hidden; /* Evita que o site balance para os lados no celular */
+            overflow-x: hidden;
             font-family: var(--fonte-textos);
             color: var(--cor-texto-escuro);
             background-color: var(--cor-fundo-claro);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-        }
         }
 
         /* Adicione estas classes novas logo abaixo do :root para os preços em 10x */
@@ -483,15 +483,17 @@
     </section>
 
     <section class="ciencia-section">
-        <div class="container ciencia-container">
-            <div class="ciencia-imagem">
-                <img src="frasco-asce.png" alt="Frasco ASCE+ HRLV Original">
-            </div>
-            <div class="ciencia-texto">
-                <h2>O Segredo dos Resultados: Pureza e Alta Concentração</h2>
-                <p>O mercado está cheio de promessas superficiais e tônicos que não entregam volume real. No <strong>nosso protocolo</strong>, nós garantimos a utilização exclusiva do frasco original <strong>ASCE+ HRLV</strong> sem diluições.</p>
-                <p>Nossa tecnologia não disfarça a queda, ela age na matriz do problema. Através de bilhões de nanovesículas inteligentes, enviamos um comando direto para reativar as células-tronco dos seus folículos adormecidos.</p>
-                <p>Sem cortes, sem tempo de inatividade e com máxima eficácia. É a medicina regenerativa em seu estado da arte, devolvendo a densidade e o preenchimento que você sempre desejou.</p>
+        <div class="container">
+            <div class="ciencia-container">
+                <div class="ciencia-imagem">
+                    <img src="frasco-asce.png" alt="Frasco ASCE+ HRLV Original">
+                </div>
+                <div class="ciencia-texto">
+                    <h2>O Segredo dos Resultados: Pureza e Alta Concentração</h2>
+                    <p>O mercado está cheio de promessas superficiais e tônicos que não entregam volume real. No <strong>nosso protocolo</strong>, nós garantimos a utilização exclusiva do frasco original <strong>ASCE+ HRLV</strong> sem diluições.</p>
+                    <p>Nossa tecnologia não disfarça a queda, ela age na matriz do problema. Através de bilhões de nanovesículas inteligentes, enviamos um comando direto para reativar as células-tronco dos seus folículos adormecidos.</p>
+                    <p>Sem cortes, sem tempo de inatividade e com máxima eficácia. É a medicina regenerativa em seu estado da arte, devolvendo a densidade e o preenchimento que você sempre desejou.</p>
+                </div>
             </div>
         </div>
     </section>
