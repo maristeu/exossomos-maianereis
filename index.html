@@ -227,6 +227,124 @@
             width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ccc;
             border-radius: 8px; font-family: var(--fonte-textos); font-size: 1rem;
         }
+    /* =========================================
+           SEÇÃO 6: FAQ (QUEBRA DE OBJEÇÕES)
+           ========================================= */
+        .faq-section {
+            padding: 80px 0 100px;
+            background-color: var(--cor-fundo-claro);
+        }
+
+        .faq-titulo {
+            text-align: center;
+            font-family: var(--fonte-titulos);
+            font-size: 2.6rem;
+            color: var(--cor-primaria);
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid rgba(229, 192, 123, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transicao-suave);
+        }
+
+        .faq-item[open] {
+            border-color: var(--cor-secundaria);
+            box-shadow: 0 10px 25px rgba(11, 25, 44, 0.08);
+        }
+
+        .faq-pergunta {
+            padding: 25px;
+            font-family: var(--fonte-textos);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--cor-primaria);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        .faq-pergunta::-webkit-details-marker { display: none; }
+
+        .faq-pergunta::after {
+            content: '+';
+            color: var(--cor-secundaria);
+            font-size: 1.8rem;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+
+        .faq-item[open] .faq-pergunta::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .faq-resposta {
+            padding: 0 25px 25px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            border-top: 1px solid rgba(229, 192, 123, 0.15);
+            margin-top: 5px;
+            padding-top: 20px;
+        }
+
+        /* =========================================
+           SEÇÃO 7: RODAPÉ
+           ========================================= */
+        .footer-section {
+            background-color: var(--cor-primaria-escura);
+            color: var(--cor-texto-claro);
+            padding: 60px 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--fonte-titulos);
+            font-size: 2.2rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 5px;
+        }
+
+        .footer-sub {
+            color: var(--cor-secundaria);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-copy {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-pergunta { font-size: 1rem; padding: 20px; }
+            .faq-resposta { padding: 0 20px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -329,7 +447,50 @@
         </div>
     </section>
 
-<div class="modal-overlay" id="modal-aplicacao">
+   <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-titulo">Dúvidas Frequentes</h2>
+            
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary class="faq-pergunta">O procedimento é doloroso?</summary>
+                    <div class="faq-resposta">
+                        <p>De forma alguma. Nosso foco é a sua experiência premium. Utilizamos um sistema de microagulhamento de altíssima precisão que torna a sessão extremamente tolerável, sem necessidade de tempo de recuperação.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Como funcionam os Bônus do Exoday?</summary>
+                    <div class="faq-resposta">
+                        <p>Os pacientes que garantirem a vaga hoje receberão gratuitamente o Mapeamento Digital 3D antes da sessão, a Fotobiomodulação (LED) durante o protocolo, e o Retorno Vip após 30 dias. Estes bônus não estarão disponíveis após o encerramento do evento.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Em quanto tempo começo a ver os resultados?</summary>
+                    <div class="faq-resposta">
+                        <p>A regeneração celular começa imediatamente. Os resultados visíveis, como o aumento notável da espessura do fio e a correção de falhas, costumam ser observados clinicamente a partir da 3ª sessão do nosso protocolo.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-logo">Exobrows</div>
+            <div class="footer-sub">Regeneração e Saúde dos Fios</div>
+            
+            <div class="footer-info">
+                <p>Especialista Responsável: Maiane Reis</p>
+                <p>📍 Clínica Exobrows | Ceará</p> </div>
+
+            <div class="footer-copy">
+                &copy; 2026 Exobrows por Maiane Reis. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="modal-aplicacao">
         <div class="modal-box">
             <span class="fechar-modal" id="btn-fechar">&times;</span>
             
