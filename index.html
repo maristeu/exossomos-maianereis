@@ -196,9 +196,25 @@
             display: inline-block; 
             filter: drop-shadow(0 20px 40px rgba(11, 25, 44, 0.25)); 
         }
-        .ciencia-texto { flex: 1; }
-        .ciencia-texto h2 { font-family: var(--fonte-titulos); font-size: 2.6rem; color: var(--cor-primaria); margin-bottom: 20px; line-height: 1.2; }
-        .ciencia-texto p { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+        .ciencia-texto { 
+            flex: 1.5; /* Dá 50% mais de largura para o texto respirar */
+            padding-left: 20px; /* Afasta o texto do frasco */
+        }
+        
+        .ciencia-texto h2 { 
+            font-family: var(--fonte-titulos); 
+            font-size: 2.6rem; 
+            color: var(--cor-primaria); 
+            margin-bottom: 25px; 
+            line-height: 1.2; 
+        }
+        
+        .ciencia-texto p { 
+            font-size: 1.15rem; /* Letra levemente maior */
+            color: var(--cor-texto-escuro); 
+            margin-bottom: 20px; 
+            line-height: 1.8; /* Aumenta o espaço entre as linhas para leitura premium */
+        }
 
         /* =========================================
            SEÇÃO 3: AUTORIDADE (MAIANE REIS)
@@ -457,7 +473,7 @@
             </div>
             <div class="ciencia-texto">
                 <h2>O Segredo dos Resultados: Pureza e Alta Concentração</h2>
-                <p>O mercado está cheio de promessas superficiais e tônicos que não entregam volume real. No <strong>No nosso protocolo</strong>, nós garantimos a utilização exclusiva do frasco original <strong>ASCE+ HRLV</strong> sem diluições.</p>
+                <p>O mercado está cheio de promessas superficiais e tônicos que não entregam volume real. No <strong>nosso protocolo</strong>, nós garantimos a utilização exclusiva do frasco original <strong>ASCE+ HRLV</strong> sem diluições.</p>
                 <p>Nossa tecnologia não disfarça a queda, ela age na matriz do problema. Através de bilhões de nanovesículas inteligentes, enviamos um comando direto para reativar as células-tronco dos seus folículos adormecidos.</p>
                 <p>Sem cortes, sem tempo de inatividade e com máxima eficácia. É a medicina regenerativa em seu estado da arte, devolvendo a densidade e o preenchimento que você sempre desejou.</p>
             </div>
