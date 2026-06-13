@@ -9,6 +9,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
+    /* =========================================
+           BOTÃO WHATSAPP FLUTUANTE
+           ========================================= */
+        .whatsapp-flutuante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366; 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse-wpp 2s infinite;
+        }
+
+        .whatsapp-flutuante img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        .whatsapp-flutuante:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none; 
+        }
+
+        @keyframes pulse-wpp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-flutuante { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+            .whatsapp-flutuante img { width: 30px; height: 30px; }
+        }
     <style>
         /* =========================================
            DESIGN SYSTEM: AZUL NAVY & CHAMPAGNE
@@ -518,7 +560,10 @@
 
         </div>
     </div>
-<script>
+<a href="https://wa.me/5585981268094?text=Ol%C3%A1%2C%20Maiane%21%20Estou%20na%20p%C3%A1gina%20do%20Exoday%20e%20fiquei%20com%20uma%20d%C3%BAvida%20r%C3%A1pida%20sobre%20os%20protocolos%20e%20os%20b%C3%B4nus.%20Poderia%20me%20ajudar%3F" target="_blank" class="whatsapp-flutuante">
+        <img src="whatsapp-icone.png" alt="Falar no WhatsApp">
+    </a>
+    <script>
         const modal = document.getElementById('modal-aplicacao');
         const btnFechar = document.getElementById('btn-fechar');
         const botoesAbrir = document.querySelectorAll('.btn-abrir-modal, #btn-abrir-vaga');
