@@ -184,25 +184,26 @@
             .escassez-box { flex-direction: column; gap: 10px; justify-content: center; }
         }
 
-        /* =========================================
+       /* =========================================
            SEÇÃO 2: A CIÊNCIA (FRASCO)
            ========================================= */
         .ciencia-section { padding: 100px 0; background-color: var(--cor-fundo-claro); }
         .ciencia-container { display: flex; align-items: center; gap: 60px; }
+        
         .ciencia-imagem { 
-            flex: 0 0 350px; /* A MÁGICA: Trava a caixa da imagem em exatamente 350px */
+            width: 45%; /* 45% da tela garantida para a imagem */
             text-align: center; 
         }
         
         .ciencia-imagem img { 
             width: 100%; 
-            max-width: 300px;
+            max-width: 420px; /* Aumentei para o frasco ficar bem grandão e imponente! */
             display: inline-block; 
             filter: drop-shadow(0 20px 40px rgba(11, 25, 44, 0.25)); 
         }
         
         .ciencia-texto { 
-            flex: 1; /* Diz para o texto: "Pegue absolutamente todo o espaço que sobrou!" */
+            width: 55%; /* 55% da tela para o texto respirar luxuosamente */
         }
         
         .ciencia-texto h2 { 
@@ -219,6 +220,13 @@
             margin-bottom: 20px; 
             line-height: 1.8; 
         }
+
+        /* CORREÇÃO BLINDADA PARA O CELULAR */
+        @media (max-width: 768px) {
+            .ciencia-container { flex-direction: column; text-align: center; gap: 30px; }
+            .ciencia-imagem, .ciencia-texto { width: 100%; } /* Destrava o layout na tela pequena */
+        }
+        
 
         /* =========================================
            SEÇÃO 3: AUTORIDADE (MAIANE REIS)
