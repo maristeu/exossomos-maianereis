@@ -263,6 +263,95 @@
         .galeria-legenda { background: var(--cor-primaria-escura); color: var(--cor-secundaria); padding: 15px; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
 
        /* =========================================
+           SEÇÃO 4.5: BÔNUS EXCLUSIVOS
+           ========================================= */
+        .bonus-section {
+            padding: 100px 0;
+            background-color: var(--cor-primaria-escura); /* Fundo Marrom Café para dar peso e luxo */
+            color: var(--cor-texto-claro);
+            text-align: center;
+        }
+
+        .bonus-titulo {
+            font-family: var(--fonte-titulos);
+            font-size: 2.8rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        .bonus-subtitulo {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .bonus-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 163, 115, 0.3);
+            border-radius: 12px;
+            padding: 40px 30px;
+            transition: var(--transicao-suave);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cor-secundaria);
+            background: rgba(212, 163, 115, 0.05);
+        }
+
+        .bonus-icone {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .bonus-nome {
+            font-family: var(--fonte-titulos);
+            font-size: 1.6rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+        }
+
+        .bonus-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .bonus-valor {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .bonus-valor span {
+            text-decoration: line-through;
+            opacity: 0.6;
+            margin-right: 10px;
+        }
+
+        .bonus-gratis {
+            color: var(--cor-secundaria);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+       
+       /* =========================================
            SEÇÃO 5: TABELA DE OFERTAS
            ========================================= */
         .ofertas-section { padding: 100px 0; background-color: var(--cor-primaria); text-align: center; color: var(--cor-texto-claro); border-top: 2px solid var(--cor-secundaria); }
@@ -530,6 +619,37 @@
         </div>
     </section>
 
+    <section class="bonus-section">
+        <div class="container">
+            <h2 class="bonus-titulo">Seu Resgate Inclui Presentes Exclusivos</h2>
+            <p class="bonus-subtitulo">Acreditamos no acompanhamento de ponta a ponta. Ao garantir a sua condição especial hoje, você destrava sem nenhum custo adicional três protocolos de aceleração e controle.</p>
+            
+            <div class="bonus-grid">
+                
+                <div class="bonus-card">
+                    <div class="bonus-icone">🔬</div>
+                    <h3 class="bonus-nome">Mapeamento Capilar Digital</h3>
+                    <p class="bonus-desc">Antes da primeira aplicação, realizaremos uma tricoscopia de alta precisão. Somente o diagnóstico exato da raiz garante um direcionamento perfeito e seguro do tratamento.</p>
+                    <div class="bonus-valor"><span>Valor: R$ 350,00</span> <span class="bonus-gratis">Seu Presente</span></div>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-icone">✨</div>
+                    <h3 class="bonus-nome">Fotobiomodulação (LED)</h3>
+                    <p class="bonus-desc">Para maximizar a absorção das nanovesículas e acelerar a multiplicação das células, cada sessão do seu protocolo será potencializada com nossa terapia de luzes de grau médico.</p>
+                    <div class="bonus-valor"><span>Valor: R$ 600,00</span> <span class="bonus-gratis">Seu Presente</span></div>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-icone">📸</div>
+                    <h3 class="bonus-nome">Retorno de Alta Clínica</h3>
+                    <p class="bonus-desc">Nosso compromisso é com o seu resultado tangível. 30 dias após finalizar as sessões, você terá um retorno presencial VIP com a especialista para o escaneamento comparativo final.</p>
+                    <div class="bonus-valor"><span>Valor: R$ 250,00</span> <span class="bonus-gratis">Seu Presente</span></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section class="ofertas-section">
         <div class="container">
             <h2 class="ofertas-titulo">Condições Especiais Liberadas</h2>
